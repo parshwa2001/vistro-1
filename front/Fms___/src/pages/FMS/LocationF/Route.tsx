@@ -19,7 +19,7 @@ import config from '../../../congif/config';
 const Route = () => {
     const dispatch = useDispatch();
     const [defaultParams] = useState({
-        route_name : "test",
+        route_name: "test",
         originCountry: 1,
         originState: 1,
         originCity: 1,
@@ -39,7 +39,7 @@ const Route = () => {
     useEffect(() => {
         dispatch(setPageTitle('Contacts'));
         const fetch = async () => {
-            const {data} = await axios.get(`${config.API_BASE_URL}/routes`);
+            const { data } = await axios.get(`${config.API_BASE_URL}/routes`);
 
             console.log(data.routes)
             setUserData(data.routes);
@@ -85,7 +85,7 @@ const Route = () => {
 
             delete params.id;
             let user: any = filteredItems.find((d: any) => d.client_id === params.client_id);
-            // const update = await axios.put(`http://localhost:3004/api/users:${params.id}`,params)
+            // const update = await axios.put(`http://93.188.164.69:3004/api/users:${params.id}`,params)
             // console.log(update);
             const update = await axios.put(`${config.API_BASE_URL}/client/${params.client_id}`, params);
             console.log(update, 'lets checck');
@@ -112,9 +112,9 @@ const Route = () => {
             // params.params.id = 10000
             params.username = params.phone_number;
             let data = await axios.post(`${config.API_BASE_URL}/routes`, params);
-            data.status === 201 ? showMessage('border_Routes created successfully') : "" 
+            data.status === 201 ? showMessage('border_Routes created successfully') : ""
             setAddContactModal(false)
-            
+
         }
         setAddContactModal(false);
     };
@@ -127,7 +127,7 @@ const Route = () => {
             setParams(json1);
             // console.log(update);
         }
-        // const update = await axios.put(`http://localhost:3004/api/client/${params.id}`,params)
+        // const update = await axios.put(`http://93.188.164.69:3004/api/client/${params.id}`,params)
         // console.log(update , "update >>>>>>>>>>>>>>>>>>>");
         setViewContactModal(false);
         setAddContactModal(true);
@@ -140,7 +140,7 @@ const Route = () => {
     };
 
     const ViewUser = async (user: any = null) => {
-        // await axios.get(`http://localhost:3004/api/client/${user.client_id}`);
+        // await axios.get(`http://93.188.164.69:3004/api/client/${user.client_id}`);
         setViewContactModal(true);
         setAddContactModal(true);
     };
@@ -530,7 +530,7 @@ const Route = () => {
                                                     required
                                                 />
                                             </div>
-{/* 
+                                            {/* 
                                             <div className="mt-4">
                                                 <label htmlFor="ctnSelect3">Select Border</label>
                                                 <select id="ctnSelect3" onChange={(e) => changeValue(e)} value={params.Borders} name="Borders" className="form-select text-white-dark" required>

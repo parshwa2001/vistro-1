@@ -99,7 +99,7 @@ const Truck = () => {
             setParams(json1);
             // console.log(update);
         }
-        // const update = await axios.put(`http://localhost:3004/api/client/${params.id}`,params)
+        // const update = await axios.put(`http://93.188.164.69:3004/api/client/${params.id}`,params)
         // console.log(update , "update >>>>>>>>>>>>>>>>>>>");
         setViewContactModal(false);
         setAddContactModal(true);
@@ -112,7 +112,7 @@ const Truck = () => {
     };
 
     const ViewUser = async (user: any = null) => {
-        // await axios.get(`http://localhost:3004/api/client/${user.client_id}`);
+        // await axios.get(`http://93.188.164.69:3004/api/client/${user.client_id}`);
         setViewContactModal(true);
         setAddContactModal(true);
     };

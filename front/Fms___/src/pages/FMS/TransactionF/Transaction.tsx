@@ -25,7 +25,7 @@ const Transaction = () => {
         date: '',
         route_name: '',
         origin: '',
-        bookings:"",
+        bookings: "",
         destination: '',
         driver_name: '',
         payable_ammount: '',
@@ -36,7 +36,7 @@ const Transaction = () => {
     const [userData, setUserData] = useState<any>([]);
     const [isLoading, setIsLoading] = useState<any>(true);
     const [opened, { open, close }] = useDisclosure(false);
-    
+
 
     const [params, setParams] = useState<any>(JSON.parse(JSON.stringify(defaultParams)));
     const [addContactModal, setAddContactModal] = useState<any>(false);
@@ -111,7 +111,7 @@ const Transaction = () => {
 
             delete params.id;
             let user: any = filteredItems.find((d: any) => d.client_id === params.client_id);
-            // const update = await axios.put(`http://localhost:3004/api/users:${params.id}`,params)
+            // const update = await axios.put(`http://93.188.164.69:3004/api/users:${params.id}`,params)
             // console.log(update);
             const update = await axios.put(`${config.API_BASE_URL}/client/${params.client_id}`, params);
             console.log(update, 'lets checck');
@@ -137,7 +137,7 @@ const Transaction = () => {
             delete params.location;
             // params.params.id = 10000
             params.username = params.phone_number;
-            let addUSer = await axios.post('http://localhost:3004/api/client', params);
+            let addUSer = await axios.post('http://93.188.164.69:3004/api/client', params);
             setAddContactModal(false);
             showMessage('User has been saved successfully.');
         }
@@ -152,7 +152,7 @@ const Transaction = () => {
             setParams(json1);
             // console.log(update);
         }
-        // const update = await axios.put(`http://localhost:3004/api/client/${params.id}`,params)
+        // const update = await axios.put(`http://93.188.164.69:3004/api/client/${params.id}`,params)
         // console.log(update , "update >>>>>>>>>>>>>>>>>>>");
         setViewContactModal(false);
         setAddContactModal(true);
@@ -165,7 +165,7 @@ const Transaction = () => {
     };
 
     const ViewUser = async (user: any = null) => {
-        // await axios.get(`http://localhost:3004/api/client/${user.client_id}`);
+        // await axios.get(`http://93.188.164.69:3004/api/client/${user.client_id}`);
         setViewContactModal(true);
         setAddContactModal(true);
     };
@@ -194,7 +194,7 @@ const Transaction = () => {
                         <div>
                             <button type="button" className="btn btn-primary" onClick={() => editUser()}>
                                 <IconUserPlus className="ltr:mr-2 rtl:ml-2" />
-                               Add Booking Payments
+                                Add Booking Payments
                             </button>
                         </div>
                         <div>
@@ -427,7 +427,7 @@ const Transaction = () => {
                                                     </select>
                                                 </div>
                                             </div>
-                                            
+
                                             <div className="grid mt-4 grid-cols-1 sm:grid-cols-2 gap-4">
                                                 <div>
                                                     <label htmlFor="routename">Date</label>
@@ -460,20 +460,20 @@ const Transaction = () => {
                                             <div className="mt-4">
                                                 <div>
                                                     <label htmlFor="routename">Origin</label>
-                                                    <input name="origin" onChange={(e) => changeValue(e)} value={params.origin} 
-                                                    placeholder='Enter Origin'
-                                                    className="form-input text-white-dark" required>
-                                                       
+                                                    <input name="origin" onChange={(e) => changeValue(e)} value={params.origin}
+                                                        placeholder='Enter Origin'
+                                                        className="form-input text-white-dark" required>
+
                                                     </input>
                                                 </div>
                                             </div>
                                             <div className="mt-4">
                                                 <div>
                                                     <label htmlFor="routename">Destination</label>
-                                                    <input name="destination" onChange={(e) => changeValue(e)} value={params.destination} 
-                                                    placeholder='Enter Destination'
-                                                    className="form-input text-white-dark" required>
-                                                       
+                                                    <input name="destination" onChange={(e) => changeValue(e)} value={params.destination}
+                                                        placeholder='Enter Destination'
+                                                        className="form-input text-white-dark" required>
+
                                                     </input>
                                                 </div>
                                             </div>
@@ -526,10 +526,10 @@ const Transaction = () => {
                                             <div className="mt-4">
                                                 <div>
                                                     <label htmlFor="routename">mode</label>
-                                                    <input name="mode" onChange={(e) => changeValue(e)} value={params.mode} 
-                                                    placeholder='Enter Mode' 
-                                                    className="form-input text-white-dark" required>
-                                                       
+                                                    <input name="mode" onChange={(e) => changeValue(e)} value={params.mode}
+                                                        placeholder='Enter Mode'
+                                                        className="form-input text-white-dark" required>
+
                                                     </input>
                                                 </div>
                                             </div>
@@ -569,7 +569,7 @@ const Transaction = () => {
             </Transition>
             {/* filter */}
             <Modal opened={opened} onClose={close} title="Filter">
-            <form>
+                <form>
                     <div className="grid mt-4 grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label htmlFor="routename">Date From</label>

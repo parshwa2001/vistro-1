@@ -33,7 +33,7 @@ const Border = () => {
     useEffect(() => {
         dispatch(setPageTitle('Contacts'));
         const fetch = async () => {
-            const {data} = await axios.get(`${config.API_BASE_URL}/routes/border`);
+            const { data } = await axios.get(`${config.API_BASE_URL}/routes/border`);
             console.log(data);
 
             setUserData(data.data);
@@ -80,7 +80,7 @@ const Border = () => {
 
             delete params.id;
             let user: any = filteredItems.find((d: any) => d.client_id === params.client_id);
-            // const update = await axios.put(`http://localhost:3004/api/users:${params.id}`,params)
+            // const update = await axios.put(`http://93.188.164.69:3004/api/users:${params.id}`,params)
             // console.log(update);
             const update = await axios.put(`${config.API_BASE_URL}/client/${params.client_id}`, params);
             console.log(update, 'lets checck');
@@ -107,9 +107,9 @@ const Border = () => {
             // params.params.id = 10000
             params.username = params.phone_number;
             let data = await axios.post(`${config.API_BASE_URL}/routes/border`, params);
-            data.status === 201 ? showMessage('Border has been saved successfully.') : "" 
+            data.status === 201 ? showMessage('Border has been saved successfully.') : ""
             setAddContactModal(false);
-            
+
         }
     };
 
@@ -121,7 +121,7 @@ const Border = () => {
             setParams(json1);
             // console.log(update);
         }
-        // const update = await axios.put(`http://localhost:3004/api/client/${params.id}`,params)
+        // const update = await axios.put(`http://93.188.164.69:3004/api/client/${params.id}`,params)
         // console.log(update , "update >>>>>>>>>>>>>>>>>>>");
         setViewContactModal(false);
         setAddContactModal(true);
@@ -134,7 +134,7 @@ const Border = () => {
     };
 
     const ViewUser = async (user: any = null) => {
-        // await axios.get(`http://localhost:3004/api/client/${user.client_id}`);
+        // await axios.get(`http://93.188.164.69:3004/api/client/${user.client_id}`);
         setViewContactModal(true);
         setAddContactModal(true);
     };
@@ -203,7 +203,7 @@ const Border = () => {
                                 {filteredItems.map((contact: any) => {
                                     return (
                                         <tr key={contact.id}>
-                                            
+
                                             <td className="whitespace-nowrap">{contact.border_id}</td>
                                             <td className="whitespace-nowrap">{contact.borderName}</td>
                                             <td className="whitespace-nowrap">{contact.country.country_name}</td>

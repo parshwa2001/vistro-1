@@ -146,7 +146,7 @@ const Client = () => {
 
             delete params.id;
             let user: any = filteredItems.find((d: any) => d.client_id === params.client_id);
-            // const update = await axios.put(`http://localhost:3004/api/users:${params.id}`,params)
+            // const update = await axios.put(`http://93.188.164.69:3004/api/users:${params.id}`,params)
             // console.log(update);
             const update = await axios.put(`${config.API_BASE_URL}/client/${params.client_id}`, params);
             console.log(update, 'lets checck');
@@ -216,7 +216,7 @@ const Client = () => {
             setParams(json1);
             // console.log(update);
         }
-        // const update = await axios.put(`http://localhost:3004/api/client/${params.id}`,params)
+        // const update = await axios.put(`http://93.188.164.69:3004/api/client/${params.id}`,params)
         // console.log(update , "update >>>>>>>>>>>>>>>>>>>");
         setViewContactModal(false);
         setAddContactModal(true);
@@ -229,7 +229,7 @@ const Client = () => {
     };
 
     const ViewUser = async (user: any = null) => {
-        // await axios.get(`http://localhost:3004/api/client/${user.client_id}`);
+        // await axios.get(`http://93.188.164.69:3004/api/client/${user.client_id}`);
         setViewContactModal(true);
         setAddContactModal(true);
     };
@@ -616,78 +616,78 @@ const Client = () => {
 
                                             {/* City */}
                                             <div className="grid mt-4 grid-cols-1 sm:grid-cols-2 gap-4">
-                                            <div className="mb-4">
-                                                <label htmlFor="citys" className="block text-sm font-medium text-gray-600">
-                                                    City
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    id="citys"
-                                                    name="citys"
-                                                    onChange={formik.handleChange}
-                                                    onBlur={formik.handleBlur}
-                                                    placeholder='Enter City'
-                                                    value={formik.values.citys}
-                                                    className={`mt-1 p-2 w-full border rounded-md ${formik.touched.citys && formik.errors.citys ? 'border-red-500' : ''}`}
-                                                />
-                                                {formik.touched.citys && formik.errors.citys && <div className="text-red-500 text-sm">{formik.errors.citys}</div>}
-                                            </div>
+                                                <div className="mb-4">
+                                                    <label htmlFor="citys" className="block text-sm font-medium text-gray-600">
+                                                        City
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        id="citys"
+                                                        name="citys"
+                                                        onChange={formik.handleChange}
+                                                        onBlur={formik.handleBlur}
+                                                        placeholder='Enter City'
+                                                        value={formik.values.citys}
+                                                        className={`mt-1 p-2 w-full border rounded-md ${formik.touched.citys && formik.errors.citys ? 'border-red-500' : ''}`}
+                                                    />
+                                                    {formik.touched.citys && formik.errors.citys && <div className="text-red-500 text-sm">{formik.errors.citys}</div>}
+                                                </div>
 
-                                            {/* State */}
-                                            <div className="mb-4">
-                                                <label htmlFor="state" className="block text-sm font-medium text-gray-600">
-                                                    State
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    id="state"
-                                                    name="state"
-                                                    onChange={formik.handleChange}
-                                                    onBlur={formik.handleBlur}
-                                                    placeholder='Enter state'
-                                                    value={formik.values.state}
-                                                    className={`mt-1 p-2 w-full border rounded-md ${formik.touched.state && formik.errors.state ? 'border-red-500' : ''}`}
-                                                />
-                                                {formik.touched.state && formik.errors.state && <div className="text-red-500 text-sm">{formik.errors.state}</div>}
-                                            </div>
+                                                {/* State */}
+                                                <div className="mb-4">
+                                                    <label htmlFor="state" className="block text-sm font-medium text-gray-600">
+                                                        State
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        id="state"
+                                                        name="state"
+                                                        onChange={formik.handleChange}
+                                                        onBlur={formik.handleBlur}
+                                                        placeholder='Enter state'
+                                                        value={formik.values.state}
+                                                        className={`mt-1 p-2 w-full border rounded-md ${formik.touched.state && formik.errors.state ? 'border-red-500' : ''}`}
+                                                    />
+                                                    {formik.touched.state && formik.errors.state && <div className="text-red-500 text-sm">{formik.errors.state}</div>}
+                                                </div>
                                             </div>
 
                                             {/* Postal Code */}
                                             <div className="grid mt-4 grid-cols-1 sm:grid-cols-2 gap-4">
-                                            <div className="mb-4">
-                                                <label htmlFor="postal_code" className="block text-sm font-medium text-gray-600">
-                                                    Postal Code
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    id="postal_code"
-                                                    name="postal_code"
-                                                    placeholder='Enter Pistal Code'
-                                                    onChange={formik.handleChange}
-                                                    onBlur={formik.handleBlur}
-                                                    value={formik.values.postal_code}
-                                                    className={`mt-1 p-2 w-full border rounded-md ${formik.touched.postal_code && formik.errors.postal_code ? 'border-red-500' : ''}`}
-                                                />
-                                                {formik.touched.postal_code && formik.errors.postal_code && <div className="text-red-500 text-sm">{formik.errors.postal_code}</div>}
-                                            </div>
+                                                <div className="mb-4">
+                                                    <label htmlFor="postal_code" className="block text-sm font-medium text-gray-600">
+                                                        Postal Code
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        id="postal_code"
+                                                        name="postal_code"
+                                                        placeholder='Enter Pistal Code'
+                                                        onChange={formik.handleChange}
+                                                        onBlur={formik.handleBlur}
+                                                        value={formik.values.postal_code}
+                                                        className={`mt-1 p-2 w-full border rounded-md ${formik.touched.postal_code && formik.errors.postal_code ? 'border-red-500' : ''}`}
+                                                    />
+                                                    {formik.touched.postal_code && formik.errors.postal_code && <div className="text-red-500 text-sm">{formik.errors.postal_code}</div>}
+                                                </div>
 
-                                            {/* Country */}
-                                            <div className="mb-4">
-                                                <label htmlFor="country" className="block text-sm font-medium text-gray-600">
-                                                    Country
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    id="country"
-                                                    name="country"
-                                                    onChange={formik.handleChange}
-                                                    onBlur={formik.handleBlur}
-                                                    placeholder='Enter Country'
-                                                    value={formik.values.country}
-                                                    className={`mt-1 p-2 w-full border rounded-md ${formik.touched.country && formik.errors.country ? 'border-red-500' : ''}`}
-                                                />
-                                                {formik.touched.country && formik.errors.country && <div className="text-red-500 text-sm">{formik.errors.country}</div>}
-                                            </div>
+                                                {/* Country */}
+                                                <div className="mb-4">
+                                                    <label htmlFor="country" className="block text-sm font-medium text-gray-600">
+                                                        Country
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        id="country"
+                                                        name="country"
+                                                        onChange={formik.handleChange}
+                                                        onBlur={formik.handleBlur}
+                                                        placeholder='Enter Country'
+                                                        value={formik.values.country}
+                                                        className={`mt-1 p-2 w-full border rounded-md ${formik.touched.country && formik.errors.country ? 'border-red-500' : ''}`}
+                                                    />
+                                                    {formik.touched.country && formik.errors.country && <div className="text-red-500 text-sm">{formik.errors.country}</div>}
+                                                </div>
                                             </div>
 
                                             {/* Address 2 */}
@@ -710,78 +710,78 @@ const Client = () => {
 
                                             {/* City 2 */}
                                             <div className="grid mt-4 grid-cols-1 sm:grid-cols-2 gap-4">
-                                            <div className="mb-4">
-                                                <label htmlFor="city2" className="block text-sm font-medium text-gray-600">
-                                                    City 2
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    id="city2"
-                                                    name="city2"
-                                                    onChange={formik.handleChange}
-                                                    onBlur={formik.handleBlur}
-                                                    placeholder='Enter City'
-                                                    value={formik.values.city2}
-                                                    className={`mt-1 p-2 w-full border rounded-md ${formik.touched.city2 && formik.errors.city2 ? 'border-red-500' : ''}`}
-                                                />
-                                                {formik.touched.city2 && formik.errors.city2 && <div className="text-red-500 text-sm">{formik.errors.city2}</div>}
-                                            </div>
+                                                <div className="mb-4">
+                                                    <label htmlFor="city2" className="block text-sm font-medium text-gray-600">
+                                                        City 2
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        id="city2"
+                                                        name="city2"
+                                                        onChange={formik.handleChange}
+                                                        onBlur={formik.handleBlur}
+                                                        placeholder='Enter City'
+                                                        value={formik.values.city2}
+                                                        className={`mt-1 p-2 w-full border rounded-md ${formik.touched.city2 && formik.errors.city2 ? 'border-red-500' : ''}`}
+                                                    />
+                                                    {formik.touched.city2 && formik.errors.city2 && <div className="text-red-500 text-sm">{formik.errors.city2}</div>}
+                                                </div>
 
-                                            {/* State 2 */}
-                                            <div className="mb-4">
-                                                <label htmlFor="state2" className="block text-sm font-medium text-gray-600">
-                                                    State 2
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    id="state2"
-                                                    name="state2"
-                                                    onChange={formik.handleChange}
-                                                    onBlur={formik.handleBlur}
-                                                    placeholder='Enter State'
-                                                    value={formik.values.state2}
-                                                    className={`mt-1 p-2 w-full border rounded-md ${formik.touched.state2 && formik.errors.state2 ? 'border-red-500' : ''}`}
-                                                />
-                                                {formik.touched.state2 && formik.errors.state2 && <div className="text-red-500 text-sm">{formik.errors.state2}</div>}
-                                            </div>
+                                                {/* State 2 */}
+                                                <div className="mb-4">
+                                                    <label htmlFor="state2" className="block text-sm font-medium text-gray-600">
+                                                        State 2
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        id="state2"
+                                                        name="state2"
+                                                        onChange={formik.handleChange}
+                                                        onBlur={formik.handleBlur}
+                                                        placeholder='Enter State'
+                                                        value={formik.values.state2}
+                                                        className={`mt-1 p-2 w-full border rounded-md ${formik.touched.state2 && formik.errors.state2 ? 'border-red-500' : ''}`}
+                                                    />
+                                                    {formik.touched.state2 && formik.errors.state2 && <div className="text-red-500 text-sm">{formik.errors.state2}</div>}
+                                                </div>
                                             </div>
 
                                             {/* Postal Code 2 */}
                                             <div className="grid mt-4 grid-cols-1 sm:grid-cols-2 gap-4">
-                                            <div className="mb-4">
-                                                <label htmlFor="postal_code2" className="block text-sm font-medium text-gray-600">
-                                                    Postal Code 2
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    id="postal_code2"
-                                                    name="postal_code2"
-                                                    onChange={formik.handleChange}
-                                                    onBlur={formik.handleBlur}
-                                                    placeholder='Enter Postal Code'
-                                                    value={formik.values.postal_code2}
-                                                    className={`mt-1 p-2 w-full border rounded-md ${formik.touched.postal_code2 && formik.errors.postal_code2 ? 'border-red-500' : ''}`}
-                                                />
-                                                {formik.touched.postal_code2 && formik.errors.postal_code2 && <div className="text-red-500 text-sm">{formik.errors.postal_code2}</div>}
-                                            </div>
+                                                <div className="mb-4">
+                                                    <label htmlFor="postal_code2" className="block text-sm font-medium text-gray-600">
+                                                        Postal Code 2
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        id="postal_code2"
+                                                        name="postal_code2"
+                                                        onChange={formik.handleChange}
+                                                        onBlur={formik.handleBlur}
+                                                        placeholder='Enter Postal Code'
+                                                        value={formik.values.postal_code2}
+                                                        className={`mt-1 p-2 w-full border rounded-md ${formik.touched.postal_code2 && formik.errors.postal_code2 ? 'border-red-500' : ''}`}
+                                                    />
+                                                    {formik.touched.postal_code2 && formik.errors.postal_code2 && <div className="text-red-500 text-sm">{formik.errors.postal_code2}</div>}
+                                                </div>
 
-                                            {/* Country 2 */}
-                                            <div className="mb-4">
-                                                <label htmlFor="country2" className="block text-sm font-medium text-gray-600">
-                                                    Country 2
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    id="country2"
-                                                    name="country2"
-                                                    onChange={formik.handleChange}
-                                                    onBlur={formik.handleBlur}
-                                                    placeholder='Enter Country'
-                                                    value={formik.values.country2}
-                                                    className={`mt-1 p-2 w-full border rounded-md ${formik.touched.country2 && formik.errors.country2 ? 'border-red-500' : ''}`}
-                                                />
-                                                {formik.touched.country2 && formik.errors.country2 && <div className="text-red-500 text-sm">{formik.errors.country2}</div>}
-                                            </div>
+                                                {/* Country 2 */}
+                                                <div className="mb-4">
+                                                    <label htmlFor="country2" className="block text-sm font-medium text-gray-600">
+                                                        Country 2
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        id="country2"
+                                                        name="country2"
+                                                        onChange={formik.handleChange}
+                                                        onBlur={formik.handleBlur}
+                                                        placeholder='Enter Country'
+                                                        value={formik.values.country2}
+                                                        className={`mt-1 p-2 w-full border rounded-md ${formik.touched.country2 && formik.errors.country2 ? 'border-red-500' : ''}`}
+                                                    />
+                                                    {formik.touched.country2 && formik.errors.country2 && <div className="text-red-500 text-sm">{formik.errors.country2}</div>}
+                                                </div>
                                             </div>
 
                                             {/* Username */}

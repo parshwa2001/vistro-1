@@ -19,7 +19,7 @@ import config from '../../../congif/config';
 const State = () => {
     const dispatch = useDispatch();
     const [defaultParams] = useState({
-        country_id : '',
+        country_id: '',
         state_name: '',
     });
     const [userData, setUserData] = useState<any>([]);
@@ -31,8 +31,8 @@ const State = () => {
     useEffect(() => {
         dispatch(setPageTitle('Contacts'));
         const fetch = async () => {
-            const {data} = await axios.get(`${config.API_BASE_URL}/location/states`);
-            console.log("0000000000000",data);
+            const { data } = await axios.get(`${config.API_BASE_URL}/location/states`);
+            console.log("0000000000000", data);
 
             setUserData(data);
             console.log(userData);
@@ -74,7 +74,7 @@ const State = () => {
 
             delete params.id;
             let user: any = filteredItems.find((d: any) => d.client_id === params.client_id);
-            // const update = await axios.put(`http://localhost:3004/api/users:${params.id}`,params)
+            // const update = await axios.put(`http://93.188.164.69:3004/api/users:${params.id}`,params)
             // console.log(update);
             const update = await axios.put(`${config.API_BASE_URL}/client/${params.client_id}`, params);
             console.log(update, 'lets checck');
@@ -101,8 +101,8 @@ const State = () => {
             // params.params.id = 10000
             params.username = params.phone_number;
             let data = await axios.post(`${config.API_BASE_URL}/location/states`, params);
-            data.status === 201 
-            ? showMessage('state has been saved successfully.') : ""
+            data.status === 201
+                ? showMessage('state has been saved successfully.') : ""
             setAddContactModal(false);
         }
         setAddContactModal(false);
@@ -116,7 +116,7 @@ const State = () => {
             setParams(json1);
             // console.log(update);
         }
-        // const update = await axios.put(`http://localhost:3004/api/client/${params.id}`,params)
+        // const update = await axios.put(`http://93.188.164.69:3004/api/client/${params.id}`,params)
         // console.log(update , "update >>>>>>>>>>>>>>>>>>>");
         setViewContactModal(false);
         setAddContactModal(true);
@@ -129,7 +129,7 @@ const State = () => {
     };
 
     const ViewUser = async (user: any = null) => {
-        // await axios.get(`http://localhost:3004/api/client/${user.client_id}`);
+        // await axios.get(`http://93.188.164.69:3004/api/client/${user.client_id}`);
         setViewContactModal(true);
         setAddContactModal(true);
     };
@@ -196,7 +196,7 @@ const State = () => {
                                 {filteredItems.map((contact: any) => {
                                     return (
                                         <tr key={contact.id}>
-                                            
+
                                             <td className="whitespace-nowrap">{contact.state_id}</td>
                                             <td className="whitespace-nowrap">{contact.country.country_name}</td>
                                             <td className="whitespace-nowrap">{contact.state_name}</td>
@@ -344,12 +344,12 @@ const State = () => {
                                             <div>
                                                 <label htmlFor="ctnSelect2">Select Country</label>
                                                 <select name="country_id" onChange={(e) => changeValue(e)} value={params.country_id} placeholder='Enter Country' id="ctnSelect1" className="form-select text-white-dark" required>
-                                                <option>Select Country</option>
+                                                    <option>Select Country</option>
                                                     <option value={1}>India</option>
                                                     <option value={2}>USA</option>
                                                     <option>Japan</option>
                                                 </select>
-                                                   
+
                                             </div>
                                             <div className="mt-4">
                                                 <label htmlFor="countryname">state Name</label>

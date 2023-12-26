@@ -22,23 +22,23 @@ const AddCustomers = () => {
         setTabs(name);
     };
     const [formData, setFormData] = useState<any>({});
-    const formRef : any = useRef(null);
+    const formRef: any = useRef(null);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    //   const { name, value } = e.target;
-      setFormData((prevData : any) => ({ ...prevData, }));
+        //   const { name, value } = e.target;
+        setFormData((prevData: any) => ({ ...prevData, }));
     };
-  
+
     const handleSubmit = async (e: React.FormEvent) => {
-      e.preventDefault();
-      // Add your form submission logic here
-      formData.Admin_id = 1
-      const responce = await axios.post("http://localhost:3004/api/user/customers",JSON.stringify(formData))
-      console.log(responce);
-      
-      console.log('Form submitted with data:', formData);
-      formRef.current.reset();
-      setFormData("")
+        e.preventDefault();
+        // Add your form submission logic here
+        formData.Admin_id = 1
+        const responce = await axios.post("http://93.188.164.69:3004/api/user/customers", JSON.stringify(formData))
+        console.log(responce);
+
+        console.log('Form submitted with data:', formData);
+        formRef.current.reset();
+        setFormData("")
     };
     const handleReset = () => {
         formRef.current.reset();
@@ -102,7 +102,7 @@ const AddCustomers = () => {
                 </div>
                 {tabs === 'home' ? (
                     <div>
-                        <form ref={formRef} onSubmit={handleSubmit}  className="border border-[#ebedf2] dark:border-[#191e3a] rounded-md p-4 mb-5 bg-white dark:bg-black">
+                        <form ref={formRef} onSubmit={handleSubmit} className="border border-[#ebedf2] dark:border-[#191e3a] rounded-md p-4 mb-5 bg-white dark:bg-black">
                             <h6 className="text-lg font-bold mb-5">General Information</h6>
                             <div className="flex flex-col sm:flex-row">
                                 {/* <div className="ltr:sm:mr-4 rtl:sm:ml-4 w-full sm:w-2/12 mb-5">
@@ -111,34 +111,34 @@ const AddCustomers = () => {
                                 <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-5">
                                     <div>
                                         <label htmlFor="company_name">company name</label>
-                                        <input id="company_name" name='company_name'  type="text" placeholder="" className="form-input" onChange={(e)=>{formData.company_name = e.target.value}} />
+                                        <input id="company_name" name='company_name' type="text" placeholder="" className="form-input" onChange={(e) => { formData.company_name = e.target.value }} />
                                     </div>
                                     <div>
                                         <label htmlFor="contact_person">contact person</label>
-                                        <input id="contact_person" name='contact_person'  type="text" placeholder="" className="form-input" onChange={(e)=>{formData.contact_person = e.target.value}} />
+                                        <input id="contact_person" name='contact_person' type="text" placeholder="" className="form-input" onChange={(e) => { formData.contact_person = e.target.value }} />
                                     </div>
 
                                     <div>
                                         <label htmlFor="phone_number">phone number</label>
-                                        <input id="phone_number" name='phone_number'  type="number" placeholder="" className="form-input" onChange={(e)=>{formData.phone_number = e.target.value}} />
+                                        <input id="phone_number" name='phone_number' type="number" placeholder="" className="form-input" onChange={(e) => { formData.phone_number = e.target.value }} />
                                     </div>
                                     <div>
                                         <label htmlFor="email">email</label>
-                                        <input id="email" name='email'  type="email" placeholder="" className="form-input" onChange={(e)=>{formData.email = e.target.value}} />
+                                        <input id="email" name='email' type="email" placeholder="" className="form-input" onChange={(e) => { formData.email = e.target.value }} />
                                     </div>
 
                                     <div>
                                         <label htmlFor="Tax_reg_no">Tax Regsiatrion Number</label>
-                                        <input id="Tax_reg_no" name='Tax_reg_no'  type="number" placeholder="" className="form-input" onChange={(e)=>{formData.Tax_reg_no = e.target.value}} />
+                                        <input id="Tax_reg_no" name='Tax_reg_no' type="number" placeholder="" className="form-input" onChange={(e) => { formData.Tax_reg_no = e.target.value }} />
                                     </div>
 
                                     <div>
                                         <label htmlFor="address">address</label>
-                                        <input id="address" name='address'  type="text" placeholder="" className="form-input" onChange={(e)=>{formData.address = e.target.value}} />
+                                        <input id="address" name='address' type="text" placeholder="" className="form-input" onChange={(e) => { formData.address = e.target.value }} />
                                     </div>
                                     <div>
                                         <label htmlFor="country">Country</label>
-                                        <select name='country'  defaultValue="United States" id="country" className=" onChange={(e)=>{formData.country = e.target.value}}form-select text-white-dark">
+                                        <select name='country' defaultValue="United States" id="country" className=" onChange={(e)=>{formData.country = e.target.value}}form-select text-white-dark">
                                             <option value="All Countries">All Countries</option>
                                             <option value="United States">United States</option>
                                             <option value="India">India</option>
@@ -151,16 +151,16 @@ const AddCustomers = () => {
                                     </div>
                                     <div>
                                         <label htmlFor="state">state</label>
-                                        <input id="state" name='state'  type="text" placeholder="" className="form-input" onChange={(e)=>{formData.state = e.target.value}} />
+                                        <input id="state" name='state' type="text" placeholder="" className="form-input" onChange={(e) => { formData.state = e.target.value }} />
                                     </div>
                                     <div>
                                         <label htmlFor="city">city</label>
-                                        <input id="city" name='city'  type="text" placeholder="" className="form-input" onChange={(e)=>{formData.city = e.target.value}} />
+                                        <input id="city" name='city' type="text" placeholder="" className="form-input" onChange={(e) => { formData.city = e.target.value }} />
                                     </div>
 
                                     <div>
                                         <label htmlFor="address2">address2</label>
-                                        <input id="address2" name='address2'  type="text" placeholder="" className="form-input" onChange={(e)=>{formData.address2 = e.target.value}} />
+                                        <input id="address2" name='address2' type="text" placeholder="" className="form-input" onChange={(e) => { formData.address2 = e.target.value }} />
                                     </div>
                                     <div>
                                         <label htmlFor="country2">Country2</label>
@@ -177,25 +177,25 @@ const AddCustomers = () => {
                                     </div>
                                     <div>
                                         <label htmlFor="state2">state2</label>
-                                        <input id="state2" name='state2'  type="text" placeholder="" className="form-input" onChange={(e)=>{formData.state2 = e.target.value}} />
+                                        <input id="state2" name='state2' type="text" placeholder="" className="form-input" onChange={(e) => { formData.state2 = e.target.value }} />
                                     </div>
                                     <div>
                                         <label htmlFor="city2">city2</label>
-                                        <input id="city2" name='city2'  type="text" placeholder="" className="form-input" onChange={(e)=>{formData.city2 = e.target.value}} />
+                                        <input id="city2" name='city2' type="text" placeholder="" className="form-input" onChange={(e) => { formData.city2 = e.target.value }} />
                                     </div>
 
                                     <div>
                                         <label htmlFor="credit_limit">credit limit</label>
-                                        <input id="credit_limit" name='credit_limit'  type="text" placeholder="" className="form-input" onChange={(e)=>{formData.credit_limit = e.target.value}} />
+                                        <input id="credit_limit" name='credit_limit' type="text" placeholder="" className="form-input" onChange={(e) => { formData.credit_limit = e.target.value }} />
                                     </div>
 
                                     <div>
                                         <label htmlFor="balance">balance</label>
-                                        <input id="balance" name='balance'  type="text" placeholder="" className="form-input" onChange={(e)=>{formData.balance = e.target.value}} />
+                                        <input id="balance" name='balance' type="text" placeholder="" className="form-input" onChange={(e) => { formData.balance = e.target.value }} />
                                     </div>
 
 
-                                            <br />
+                                    <br />
                                     <div className="sm:flex sm:space-x-3 mt-3">
                                         <div className="sm:w-1/2">
                                             <button type="button" onClick={handleReset} className="w-full btn btn-primary">

@@ -19,8 +19,8 @@ import config from '../../../congif/config';
 const AssignCompany = () => {
     const dispatch = useDispatch();
     const [defaultParams] = useState({
-      user:"",
-      company:""
+        user: "",
+        company: ""
     });
     const [userData, setUserData] = useState<any>([]);
     const [isLoading, setIsLoading] = useState<any>(true);
@@ -78,7 +78,7 @@ const AssignCompany = () => {
 
             delete params.id;
             let user: any = filteredItems.find((d: any) => d.client_id === params.client_id);
-            // const update = await axios.put(`http://localhost:3004/api/users:${params.id}`,params)
+            // const update = await axios.put(`http://93.188.164.69:3004/api/users:${params.id}`,params)
             // console.log(update);
             const update = await axios.put(`${config.API_BASE_URL}/client/${params.client_id}`, params);
             console.log(update, 'lets checck');
@@ -119,7 +119,7 @@ const AssignCompany = () => {
             setParams(json1);
             // console.log(update);
         }
-        // const update = await axios.put(`http://localhost:3004/api/client/${params.id}`,params)
+        // const update = await axios.put(`http://93.188.164.69:3004/api/client/${params.id}`,params)
         // console.log(update , "update >>>>>>>>>>>>>>>>>>>");
         setViewContactModal(false);
         setAddContactModal(true);
@@ -132,7 +132,7 @@ const AssignCompany = () => {
     };
 
     const ViewUser = async (user: any = null) => {
-        // await axios.get(`http://localhost:3004/api/client/${user.client_id}`);
+        // await axios.get(`http://93.188.164.69:3004/api/client/${user.client_id}`);
         setViewContactModal(true);
         setAddContactModal(true);
     };
@@ -372,7 +372,7 @@ const AssignCompany = () => {
                                     </div>
                                     <div className="p-5">
                                         <form>
-                                        <div className="grid mt-4 grid-cols-1 sm:grid-cols-2 gap-4">
+                                            <div className="grid mt-4 grid-cols-1 sm:grid-cols-2 gap-4">
                                                 <div>
                                                     <label htmlFor="ctnSelect2">Select User</label>
                                                     <select id="ctnSelect1" name="user" onChange={(e) => changeValue(e)} value={params.user} className="form-select text-white-dark" required>
@@ -391,7 +391,7 @@ const AssignCompany = () => {
                                                         <option>3</option>
                                                     </select>
                                                 </div>
-                                                </div>
+                                            </div>
 
                                             {!viewContactModal && (
                                                 <div className="flex justify-end items-center mt-8">

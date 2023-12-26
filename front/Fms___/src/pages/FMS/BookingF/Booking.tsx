@@ -31,7 +31,7 @@ const Booking = () => {
         total_ammount: '',
         driver: '',
         ammount_to_driver: '',
-        status:''
+        status: ''
     });
     const [userData, setUserData] = useState<any>([]);
     const [isLoading, setIsLoading] = useState<any>(true);
@@ -90,7 +90,7 @@ const Booking = () => {
 
             delete params.id;
             let user: any = filteredItems.find((d: any) => d.client_id === params.client_id);
-            // const update = await axios.put(`http://localhost:3004/api/users:${params.id}`,params)
+            // const update = await axios.put(`http://93.188.164.69:3004/api/users:${params.id}`,params)
             // console.log(update);
             const update = await axios.put(`${config.API_BASE_URL}/client/${params.client_id}`, params);
             console.log(update, 'lets checck');
@@ -116,7 +116,7 @@ const Booking = () => {
             delete params.location;
             // params.params.id = 10000
             params.username = params.phone_number;
-            let addUSer = await axios.post('http://localhost:3004/api/client', params);
+            let addUSer = await axios.post('http://93.188.164.69:3004/api/client', params);
             setAddContactModal(false);
             showMessage('User has been saved successfully.');
         }
@@ -131,7 +131,7 @@ const Booking = () => {
             setParams(json1);
             // console.log(update);
         }
-        // const update = await axios.put(`http://localhost:3004/api/client/${params.id}`,params)
+        // const update = await axios.put(`http://93.188.164.69:3004/api/client/${params.id}`,params)
         // console.log(update , "update >>>>>>>>>>>>>>>>>>>");
         setViewContactModal(false);
         setAddContactModal(true);
@@ -144,7 +144,7 @@ const Booking = () => {
     };
 
     const ViewUser = async (user: any = null) => {
-        // await axios.get(`http://localhost:3004/api/client/${user.client_id}`);
+        // await axios.get(`http://93.188.164.69:3004/api/client/${user.client_id}`);
         setViewContactModal(true);
         setAddContactModal(true);
     };

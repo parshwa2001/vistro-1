@@ -20,21 +20,21 @@ import IconClock from '../../components/Icon/IconClock';
 import IconHorizontalDots from '../../components/Icon/IconHorizontalDots';
 import axios from "axios"
 
-const Profile =  () => {
+const Profile = () => {
     const [user, setUser] = useState<any>();
     const dispatch = useDispatch();
-    useEffect(  () => {
-        const fetchData = async () =>{
+    useEffect(() => {
+        const fetchData = async () => {
             try {
-                const responce = await axios.get("http://localhost:3004/api/company/1")
+                const responce = await axios.get("http://93.188.164.69:3004/api/company/1")
                 // console.log(responce.data.data , "ressss");
                 setUser(responce.data.data)
-                console.log(user , "dfdfddfdfds/");
-                
+                console.log(user, "dfdfddfdfds/");
+
                 dispatch(setPageTitle('Profile'));
             } catch (error) {
                 console.log(error);
-                
+
             }
         }
         fetchData()
@@ -75,7 +75,7 @@ const Profile =  () => {
                             <Link to="/users/Driver" className="ltr:ml-auto rtl:mr-auto btn btn-primary p-2 rounded-full">
                                 <IconPencilPaper />
                             </Link>
-                            
+
                         </div>
                         <div className="mb-5">
                             <div className="flex flex-col justify-center items-center">

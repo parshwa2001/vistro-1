@@ -4,9 +4,9 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build && tsc",
-        "preview": "vite preview"
+        "dev": " PORT=3004 vite --host ",
+        "build": " PORT=3004 vite build && tsc --host ",
+        "preview": " vite preview --host "
     },
     "dependencies": {
         "@emotion/react": "^11.10.6",

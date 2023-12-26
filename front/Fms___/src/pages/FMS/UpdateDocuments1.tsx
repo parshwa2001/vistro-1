@@ -104,9 +104,9 @@ const UpdateDocuments1 = () => {
 
             delete params.id;
             let user: any = filteredItems.find((d: any) => d.client_id === params.client_id);
-            // const update = await axios.put(`http://localhost:3004/api/users:${params.id}`,params)
+            // const update = await axios.put(`http://93.188.164.69:3004/api/users:${params.id}`,params)
             // console.log(update);
-            const update = await axios.put(`http://localhost:3004/api/client/${params.client_id}`, params);
+            const update = await axios.put(`http://93.188.164.69:3004/api/client/${params.client_id}`, params);
             console.log(update, 'lets checck');
         } else {
             //add user
@@ -130,7 +130,7 @@ const UpdateDocuments1 = () => {
             delete params.location;
             // params.params.id = 10000
             params.username = params.phone_number;
-            let addUSer = await axios.post('http://localhost:3004/api/client', params);
+            let addUSer = await axios.post('http://93.188.164.69:3004/api/client', params);
             setAddContactModal(false);
             showMessage('User has been saved successfully.');
         }
@@ -145,7 +145,7 @@ const UpdateDocuments1 = () => {
             setParams(json1);
             // console.log(update);
         }
-        // const update = await axios.put(`http://localhost:3004/api/client/${params.id}`,params)
+        // const update = await axios.put(`http://93.188.164.69:3004/api/client/${params.id}`,params)
         // console.log(update , "update >>>>>>>>>>>>>>>>>>>");
         setViewContactModal(false);
         setAddContactModal(true);
@@ -153,12 +153,12 @@ const UpdateDocuments1 = () => {
 
     const deleteUser = async (user: any = null) => {
         // setFilteredItems(filteredItems.filter((d: any) => d.id !== user.id));
-        await axios.delete(`http://localhost:3004/api/client/${user.client_id}`);
+        await axios.delete(`http://93.188.164.69:3004/api/client/${user.client_id}`);
         showMessage('client has been deleted successfully.');
     };
 
     const ViewUser = async (user: any = null) => {
-        // await axios.get(`http://localhost:3004/api/client/${user.client_id}`);
+        // await axios.get(`http://93.188.164.69:3004/api/client/${user.client_id}`);
         setViewContactModal(true);
         setAddContactModal(true);
     };

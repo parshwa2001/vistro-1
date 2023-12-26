@@ -20,8 +20,8 @@ const CustomerRecieptReport = () => {
     const dispatch = useDispatch();
     const [defaultParams] = useState({
         date: '',
-        customer:''
-       
+        customer: ''
+
     });
     const [userData, setUserData] = useState<any>([]);
     const [isLoading, setIsLoading] = useState<any>(true);
@@ -78,7 +78,7 @@ const CustomerRecieptReport = () => {
 
             delete params.id;
             let user: any = filteredItems.find((d: any) => d.client_id === params.client_id);
-            // const update = await axios.put(`http://localhost:3004/api/users:${params.id}`,params)
+            // const update = await axios.put(`http://93.188.164.69:3004/api/users:${params.id}`,params)
             // console.log(update);
             const update = await axios.put(`${config.API_BASE_URL}/client/${params.client_id}`, params);
             console.log(update, 'lets checck');
@@ -104,7 +104,7 @@ const CustomerRecieptReport = () => {
             delete params.location;
             // params.params.id = 10000
             params.username = params.phone_number;
-            let addUSer = await axios.post('http://localhost:3004/api/client', params);
+            let addUSer = await axios.post('http://93.188.164.69:3004/api/client', params);
             setAddContactModal(false);
             showMessage('User has been saved successfully.');
         }
@@ -119,7 +119,7 @@ const CustomerRecieptReport = () => {
             setParams(json1);
             // console.log(update);
         }
-        // const update = await axios.put(`http://localhost:3004/api/client/${params.id}`,params)
+        // const update = await axios.put(`http://93.188.164.69:3004/api/client/${params.id}`,params)
         // console.log(update , "update >>>>>>>>>>>>>>>>>>>");
         setViewContactModal(false);
         setAddContactModal(true);
@@ -132,7 +132,7 @@ const CustomerRecieptReport = () => {
     };
 
     const ViewUser = async (user: any = null) => {
-        // await axios.get(`http://localhost:3004/api/client/${user.client_id}`);
+        // await axios.get(`http://93.188.164.69:3004/api/client/${user.client_id}`);
         setViewContactModal(true);
         setAddContactModal(true);
     };
@@ -160,7 +160,7 @@ const CustomerRecieptReport = () => {
                     <div className="flex gap-3">
                         <div>
                             <button type="button" className="btn btn-primary" onClick={() => editUser()}>
-                              
+
                                 Filter
                             </button>
                         </div>
@@ -189,7 +189,7 @@ const CustomerRecieptReport = () => {
                         <table className="table-striped table-hover">
                             <thead>
                                 <tr>
-                                <th>S.No</th>
+                                    <th>S.No</th>
                                     <th>Invoice Date</th>
                                     <th>Invoice Number</th>
                                     <th>Booking Id</th>
@@ -369,13 +369,13 @@ const CustomerRecieptReport = () => {
                                     </div>
                                     <div className="p-5">
                                         <form>
-                                        <div>
-                                                    <label htmlFor="">Date</label>
-                                                    <input type='date' name="date" onChange={(e) => changeValue(e)} value={params.date} className="form-input text-white-dark" required>
-                                                       
-                                                    </input>
-                                                </div>
-                                       
+                                            <div>
+                                                <label htmlFor="">Date</label>
+                                                <input type='date' name="date" onChange={(e) => changeValue(e)} value={params.date} className="form-input text-white-dark" required>
+
+                                                </input>
+                                            </div>
+
                                             <div className="mt-4">
 
                                                 <div>
@@ -390,8 +390,8 @@ const CustomerRecieptReport = () => {
 
                                             {!viewContactModal && (
                                                 <div className="flex justify-end items-center mt-8">
-                                                   
-                                                   <button type="button" className="btn btn-outline-success ltr:ml-4 rtl:mr-4" onClick={saveUser}>
+
+                                                    <button type="button" className="btn btn-outline-success ltr:ml-4 rtl:mr-4" onClick={saveUser}>
                                                         {params.driver_id ? 'Update' : 'Filter'}
                                                     </button>
                                                 </div>

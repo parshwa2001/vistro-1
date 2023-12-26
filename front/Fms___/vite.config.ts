@@ -15,7 +15,7 @@ export default defineConfig({
     server : {
         // port : 3004 ,
         proxy : {
-            target: 'https://fms-wdhb.onrender.com/', // Replace with your backend server URL
+            target: 'http://93.188.164.69:8081/api', // Replace with your backend server URL
             
         }
     }

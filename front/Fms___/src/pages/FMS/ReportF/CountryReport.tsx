@@ -19,7 +19,7 @@ import config from '../../../congif/config';
 const Report = () => {
     const dispatch = useDispatch();
     const [defaultParams] = useState({
-       
+
         city: '',
         type: '',
         date_to: '',
@@ -82,7 +82,7 @@ const Report = () => {
 
             delete params.id;
             let user: any = filteredItems.find((d: any) => d.client_id === params.client_id);
-            // const update = await axios.put(`http://localhost:3004/api/users:${params.id}`,params)
+            // const update = await axios.put(`http://93.188.164.69:3004/api/users:${params.id}`,params)
             // console.log(update);
             const update = await axios.put(`${config.API_BASE_URL}/client/${params.client_id}`, params);
             console.log(update, 'lets checck');
@@ -108,7 +108,7 @@ const Report = () => {
             delete params.location;
             // params.params.id = 10000
             params.username = params.phone_number;
-            let addUSer = await axios.post('http://localhost:3004/api/client', params);
+            let addUSer = await axios.post('http://93.188.164.69:3004/api/client', params);
             setAddContactModal(false);
             showMessage('User has been saved successfully.');
         }
@@ -123,7 +123,7 @@ const Report = () => {
             setParams(json1);
             // console.log(update);
         }
-        // const update = await axios.put(`http://localhost:3004/api/client/${params.id}`,params)
+        // const update = await axios.put(`http://93.188.164.69:3004/api/client/${params.id}`,params)
         // console.log(update , "update >>>>>>>>>>>>>>>>>>>");
         setViewContactModal(false);
         setAddContactModal(true);
@@ -136,7 +136,7 @@ const Report = () => {
     };
 
     const ViewUser = async (user: any = null) => {
-        // await axios.get(`http://localhost:3004/api/client/${user.client_id}`);
+        // await axios.get(`http://93.188.164.69:3004/api/client/${user.client_id}`);
         setViewContactModal(true);
         setAddContactModal(true);
     };
@@ -164,7 +164,7 @@ const Report = () => {
                     <div className="flex gap-3">
                         <div>
                             <button type="button" className="btn btn-primary" onClick={() => editUser()}>
-                               
+
                                 Filter
                             </button>
                         </div>
@@ -401,13 +401,13 @@ const Report = () => {
                                                 <div>
                                                     <label htmlFor="">Date From</label>
                                                     <input type='date' name="date_from" onChange={(e) => changeValue(e)} value={params.date_from} className="form-input text-white-dark" required>
-                                                       
+
                                                     </input>
                                                 </div>
                                                 <div>
                                                     <label htmlFor="">Date To</label>
                                                     <input type='date' name="date_to" onChange={(e) => changeValue(e)} value={params.date_to} className="form-input text-white-dark" required>
-                                                      
+
                                                     </input>
                                                 </div>
                                             </div>
@@ -424,8 +424,8 @@ const Report = () => {
 
                                             {!viewContactModal && (
                                                 <div className="flex justify-end items-center mt-8">
-                                                   
-                                                   <button type="button" className="btn btn-outline-success ltr:ml-4 rtl:mr-4" onClick={saveUser}>
+
+                                                    <button type="button" className="btn btn-outline-success ltr:ml-4 rtl:mr-4" onClick={saveUser}>
                                                         {params.driver_id ? 'Update' : 'Filter'}
                                                     </button>
                                                 </div>

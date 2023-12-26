@@ -20,26 +20,27 @@ const Driver = () => {
     const dispatch = useDispatch();
     const [defaultParams] = useState({
         "name": "John Doe",
-    "phone": "1234567890",
-    "contactNumber" : "15545455454",
-    "email": "vishal@examplehhh.com",
-    "address1": "123 Main St",
-    "address2": "Apt 4",
-    "country": "USA",
-    "state": "CA",
-    "city": "San Francisco",
-    "truckType": "Semi",
-    "passportNumber": "ABC123",
-    "passportExpiryDate": "2023-12-31",
-    "idCardNumber": "XYZ456",
-    "idCardExpiryDate": "2023-12-31",
-    "drivingLicenseNumber": "DEF789",
-    "drivingLicenseExpiryDate": "2023-12-31",
-    "truckNumber": "TRK123",
-    "truckExpiryDate": "2023-12-31",
-    "status": "Active",
-    "whatsappNumber" :  "7040131845" , 
-    "remark" : "Goods"    });
+        "phone": "1234567890",
+        "contactNumber": "15545455454",
+        "email": "vishal@examplehhh.com",
+        "address1": "123 Main St",
+        "address2": "Apt 4",
+        "country": "USA",
+        "state": "CA",
+        "city": "San Francisco",
+        "truckType": "Semi",
+        "passportNumber": "ABC123",
+        "passportExpiryDate": "2023-12-31",
+        "idCardNumber": "XYZ456",
+        "idCardExpiryDate": "2023-12-31",
+        "drivingLicenseNumber": "DEF789",
+        "drivingLicenseExpiryDate": "2023-12-31",
+        "truckNumber": "TRK123",
+        "truckExpiryDate": "2023-12-31",
+        "status": "Active",
+        "whatsappNumber": "7040131845",
+        "remark": "Goods"
+    });
     const [userData, setUserData] = useState<any>([]);
     const [isLoading, setIsLoading] = useState<any>(true);
 
@@ -99,7 +100,7 @@ const Driver = () => {
             setParams(json1);
             // console.log(update);
         }
-        // const update = await axios.put(`http://localhost:3004/api/client/${params.id}`,params)
+        // const update = await axios.put(`http://93.188.164.69:3004/api/client/${params.id}`,params)
         // console.log(update , "update >>>>>>>>>>>>>>>>>>>");
         setViewContactModal(false);
         setAddContactModal(true);
@@ -112,7 +113,7 @@ const Driver = () => {
     };
 
     const ViewUser = async (user: any = null) => {
-        // await axios.get(`http://localhost:3004/api/client/${user.client_id}`);
+        // await axios.get(`http://93.188.164.69:3004/api/client/${user.client_id}`);
         setViewContactModal(true);
         setAddContactModal(true);
     };
@@ -376,62 +377,62 @@ const Driver = () => {
                                                 />
                                             </div>
                                             <div className="grid mt-4 grid-cols-1 sm:grid-cols-2 gap-4">
-                                            <div>
-                                                <label htmlFor="address1">Address1</label>
-                                                <input
-                                                    id="address1"
-                                                    type="text"
-                                                    name="address1"
-                                                    value={params.address1}
-                                                    onChange={(e) => changeValue(e)}
-                                                    placeholder="Enter Driver Address1"
-                                                    className="form-input"
-                                                    required
-                                                />
-                                            </div>
-                                            <div>
-                                                <label htmlFor="address2">Address2</label>
-                                                <input
-                                                    id="address2"
-                                                    type="text"
-                                                    name="address2"
-                                                    value={params.address2}
-                                                    onChange={(e) => changeValue(e)}
-                                                    placeholder="Enter Driver Address2"
-                                                    className="form-input"
-                                                    required
-                                                />
-                                            </div>
+                                                <div>
+                                                    <label htmlFor="address1">Address1</label>
+                                                    <input
+                                                        id="address1"
+                                                        type="text"
+                                                        name="address1"
+                                                        value={params.address1}
+                                                        onChange={(e) => changeValue(e)}
+                                                        placeholder="Enter Driver Address1"
+                                                        className="form-input"
+                                                        required
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="address2">Address2</label>
+                                                    <input
+                                                        id="address2"
+                                                        type="text"
+                                                        name="address2"
+                                                        value={params.address2}
+                                                        onChange={(e) => changeValue(e)}
+                                                        placeholder="Enter Driver Address2"
+                                                        className="form-input"
+                                                        required
+                                                    />
+                                                </div>
                                             </div>
                                             <div className="grid mt-4 grid-cols-1 sm:grid-cols-2 gap-4">
-                                            <div>
-                                                <label htmlFor="country">Country</label>
-                                                <input
-                                                    id="country"
-                                                    type="text"
-                                                    name="country"
-                                                    value={params.country}
-                                                    onChange={(e) => changeValue(e)}
-                                                    placeholder="Enter Driver Country"
-                                                    className="form-input"
-                                                    required
-                                                />
+                                                <div>
+                                                    <label htmlFor="country">Country</label>
+                                                    <input
+                                                        id="country"
+                                                        type="text"
+                                                        name="country"
+                                                        value={params.country}
+                                                        onChange={(e) => changeValue(e)}
+                                                        placeholder="Enter Driver Country"
+                                                        className="form-input"
+                                                        required
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="state">State</label>
+                                                    <input
+                                                        id="state"
+                                                        type="text"
+                                                        name="state"
+                                                        value={params.state}
+                                                        onChange={(e) => changeValue(e)}
+                                                        placeholder="Enter Driver State"
+                                                        className="form-input"
+                                                        required
+                                                    />
+                                                </div>
                                             </div>
-                                            <div>
-                                                <label htmlFor="state">State</label>
-                                                <input
-                                                    id="state"
-                                                    type="text"
-                                                    name="state"
-                                                    value={params.state}
-                                                    onChange={(e) => changeValue(e)}
-                                                    placeholder="Enter Driver State"
-                                                    className="form-input"
-                                                    required
-                                                />
-                                            </div>
-                                            </div>
-                                           
+
                                             <div className='mt-4'>
                                                 <label htmlFor="city">City</label>
                                                 <input
@@ -446,89 +447,89 @@ const Driver = () => {
                                                 />
                                             </div>
                                             <div className="grid mt-4 grid-cols-1 sm:grid-cols-2 gap-4">
-                                            <div>
-                                                <label htmlFor="truckType">Truck Type</label>
-                                                <input
-                                                    id="truckType"
-                                                    type="text"
-                                                    name="truckType"
-                                                    value={params.truckType}
-                                                    onChange={(e) => changeValue(e)}
-                                                    placeholder="Enter Driver Truck Type"
-                                                    className="form-input"
-                                                    required
-                                                />
-                                            </div>
-                                          
-                                            <div>
-                                                <label htmlFor="passportNumber">Passport Number</label>
-                                                <input
-                                                    id="passportNumber"
-                                                    type="text"
-                                                    name="passportNumber"
-                                                    value={params.passportNumber}
-                                                    onChange={(e) => changeValue(e)}
-                                                    placeholder="Enter Driver Passport Number"
-                                                    className="form-input"
-                                                    required
-                                                />
-                                            </div>
-                                            </div>
-                                            <div className="grid mt-4 grid-cols-1 sm:grid-cols-2 gap-4">
-                                            <div>
-                                                <label htmlFor="idCardExpiryDate">Id Card Expiry Date</label>
-                                                <input
-                                                    id="idCardExpiryDate"
-                                                    type="date"
-                                                    name="idCardExpiryDate"
-                                                    value={params.idCardExpiryDate}
-                                                    onChange={(e) => changeValue(e)}
-                                                    placeholder="Enter Driver Id Card Expiry Date"
-                                                    className="form-input"
-                                                    required
-                                                />
-                                            </div>
-                                            <div>
-                                                <label htmlFor="idCardNumber">Id Card Number</label>
-                                                <input
-                                                    id="idCardNumber"
-                                                    type="text"
-                                                    name="idCardNumber"
-                                                    value={params.idCardNumber}
-                                                    onChange={(e) => changeValue(e)}
-                                                    placeholder="Enter Driver Id Card Number"
-                                                    className="form-input"
-                                                    required
-                                                />
-                                            </div>
+                                                <div>
+                                                    <label htmlFor="truckType">Truck Type</label>
+                                                    <input
+                                                        id="truckType"
+                                                        type="text"
+                                                        name="truckType"
+                                                        value={params.truckType}
+                                                        onChange={(e) => changeValue(e)}
+                                                        placeholder="Enter Driver Truck Type"
+                                                        className="form-input"
+                                                        required
+                                                    />
+                                                </div>
+
+                                                <div>
+                                                    <label htmlFor="passportNumber">Passport Number</label>
+                                                    <input
+                                                        id="passportNumber"
+                                                        type="text"
+                                                        name="passportNumber"
+                                                        value={params.passportNumber}
+                                                        onChange={(e) => changeValue(e)}
+                                                        placeholder="Enter Driver Passport Number"
+                                                        className="form-input"
+                                                        required
+                                                    />
+                                                </div>
                                             </div>
                                             <div className="grid mt-4 grid-cols-1 sm:grid-cols-2 gap-4">
-                                            <div>
-                                                <label htmlFor="idCardExpiryDate">Id Card Expiry Date</label>
-                                                <input
-                                                    id="idCardExpiryDate"
-                                                    type="date"
-                                                    name="idCardExpiryDate"
-                                                    value={params.idCardExpiryDate}
-                                                    onChange={(e) => changeValue(e)}
-                                                    placeholder="Enter Driver Id Card ExpiryDate"
-                                                    className="form-input"
-                                                    required
-                                                />
+                                                <div>
+                                                    <label htmlFor="idCardExpiryDate">Id Card Expiry Date</label>
+                                                    <input
+                                                        id="idCardExpiryDate"
+                                                        type="date"
+                                                        name="idCardExpiryDate"
+                                                        value={params.idCardExpiryDate}
+                                                        onChange={(e) => changeValue(e)}
+                                                        placeholder="Enter Driver Id Card Expiry Date"
+                                                        className="form-input"
+                                                        required
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="idCardNumber">Id Card Number</label>
+                                                    <input
+                                                        id="idCardNumber"
+                                                        type="text"
+                                                        name="idCardNumber"
+                                                        value={params.idCardNumber}
+                                                        onChange={(e) => changeValue(e)}
+                                                        placeholder="Enter Driver Id Card Number"
+                                                        className="form-input"
+                                                        required
+                                                    />
+                                                </div>
                                             </div>
-                                            <div>
-                                                <label htmlFor="drivingLicenseNumber">Driving License Number</label>
-                                                <input
-                                                    id="drivingLicenseNumber"
-                                                    type="text"
-                                                    name="drivingLicenseNumber"
-                                                    value={params.drivingLicenseNumber}
-                                                    onChange={(e) => changeValue(e)}
-                                                    placeholder="Enter Driver Driving License Number"
-                                                    className="form-input"
-                                                    required
-                                                />
-                                            </div>
+                                            <div className="grid mt-4 grid-cols-1 sm:grid-cols-2 gap-4">
+                                                <div>
+                                                    <label htmlFor="idCardExpiryDate">Id Card Expiry Date</label>
+                                                    <input
+                                                        id="idCardExpiryDate"
+                                                        type="date"
+                                                        name="idCardExpiryDate"
+                                                        value={params.idCardExpiryDate}
+                                                        onChange={(e) => changeValue(e)}
+                                                        placeholder="Enter Driver Id Card ExpiryDate"
+                                                        className="form-input"
+                                                        required
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="drivingLicenseNumber">Driving License Number</label>
+                                                    <input
+                                                        id="drivingLicenseNumber"
+                                                        type="text"
+                                                        name="drivingLicenseNumber"
+                                                        value={params.drivingLicenseNumber}
+                                                        onChange={(e) => changeValue(e)}
+                                                        placeholder="Enter Driver Driving License Number"
+                                                        className="form-input"
+                                                        required
+                                                    />
+                                                </div>
                                             </div>
                                             <div className='mt-4'>
                                                 <label htmlFor="drivingLicenseExpiryDate">Driving License Expiry Date</label>
@@ -544,32 +545,32 @@ const Driver = () => {
                                                 />
                                             </div>
                                             <div className="grid mt-4 grid-cols-1 sm:grid-cols-2 gap-4">
-                                            <div>
-                                                <label htmlFor="truckNumber">Truck Number</label>
-                                                <input
-                                                    id="truckNumber"
-                                                    type="text"
-                                                    name="truckNumber"
-                                                    value={params.truckNumber}
-                                                    onChange={(e) => changeValue(e)}
-                                                    placeholder="Enter Driver Truck Number"
-                                                    className="form-input"
-                                                    required
-                                                />
-                                            </div>
-                                            <div>
-                                                <label htmlFor="truckExpiryDate">Truck Expiry Date</label>
-                                                <input
-                                                    id="truckExpiryDate"
-                                                    type="date"
-                                                    name="truckExpiryDate"
-                                                    value={params.truckExpiryDate}
-                                                    onChange={(e) => changeValue(e)}
-                                                    placeholder="Enter Driver Truck Expiry Date"
-                                                    className="form-input"
-                                                    required
-                                                />
-                                            </div>
+                                                <div>
+                                                    <label htmlFor="truckNumber">Truck Number</label>
+                                                    <input
+                                                        id="truckNumber"
+                                                        type="text"
+                                                        name="truckNumber"
+                                                        value={params.truckNumber}
+                                                        onChange={(e) => changeValue(e)}
+                                                        placeholder="Enter Driver Truck Number"
+                                                        className="form-input"
+                                                        required
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="truckExpiryDate">Truck Expiry Date</label>
+                                                    <input
+                                                        id="truckExpiryDate"
+                                                        type="date"
+                                                        name="truckExpiryDate"
+                                                        value={params.truckExpiryDate}
+                                                        onChange={(e) => changeValue(e)}
+                                                        placeholder="Enter Driver Truck Expiry Date"
+                                                        className="form-input"
+                                                        required
+                                                    />
+                                                </div>
                                             </div>
                                             <div className='mt-4'>
                                                 <label htmlFor="status">status</label>

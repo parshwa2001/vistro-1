@@ -20,11 +20,11 @@ const EmailConfig = () => {
     const dispatch = useDispatch();
     const [defaultParams] = useState({
         Protocol: "",
-    SMTPHost: "",
-    SMTPPort: "",
-    SenderMail: "",
-    password: "",
-    mailtype: ""
+        SMTPHost: "",
+        SMTPPort: "",
+        SenderMail: "",
+        password: "",
+        mailtype: ""
     });
     const [userData, setUserData] = useState<any>([]);
     const [isLoading, setIsLoading] = useState<any>(true);
@@ -71,7 +71,7 @@ const EmailConfig = () => {
     contactList = userData;
 
     const saveUser = async () => {
-        if(Object.values(params).some(x => (x === null || x === ''))){
+        if (Object.values(params).some(x => (x === null || x === ''))) {
             showMessage('somthing  is missing', 'error');
             return true;
         }
@@ -82,7 +82,7 @@ const EmailConfig = () => {
 
             delete params.id;
             let user: any = filteredItems.find((d: any) => d.client_id === params.client_id);
-            // const update = await axios.put(`http://localhost:3004/api/users:${params.id}`,params)
+            // const update = await axios.put(`http://93.188.164.69:3004/api/users:${params.id}`,params)
             // console.log(update);
             const update = await axios.put(`${config.API_BASE_URL}/client/${params.client_id}`, params);
             console.log(update, 'lets checck');
@@ -108,7 +108,7 @@ const EmailConfig = () => {
             delete params.location;
             // params.params.id = 10000
             params.username = params.phone_number;
-            let addUSer = await axios.post('http://localhost:3004/api/client', params);
+            let addUSer = await axios.post('http://93.188.164.69:3004/api/client', params);
             setAddContactModal(false);
             showMessage('User has been saved successfully.');
         }
@@ -123,7 +123,7 @@ const EmailConfig = () => {
             setParams(json1);
             // console.log(update);
         }
-        // const update = await axios.put(`http://localhost:3004/api/client/${params.id}`,params)
+        // const update = await axios.put(`http://93.188.164.69:3004/api/client/${params.id}`,params)
         // console.log(update , "update >>>>>>>>>>>>>>>>>>>");
         setViewContactModal(false);
         setAddContactModal(true);
@@ -136,7 +136,7 @@ const EmailConfig = () => {
     };
 
     const ViewUser = async (user: any = null) => {
-        // await axios.get(`http://localhost:3004/api/client/${user.client_id}`);
+        // await axios.get(`http://93.188.164.69:3004/api/client/${user.client_id}`);
         setViewContactModal(true);
         setAddContactModal(true);
     };
@@ -366,86 +366,86 @@ const EmailConfig = () => {
                                     </div>
                                     <div className="p-5">
                                         <form>
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label>Protocol</label>
-                <input
-                  type="text"
-                  placeholder="smtp"
-                  className="form-input flex-1"
-                  onChange={(e)=>changeValue(e)}
-                  value={params.Protocol}
-                  name="Protocol"
-                />
-              </div>
-              <div>
-                <label>SMTP Host</label>
-                <input
-                  type="text"
-                  placeholder="ssl:smtp@hostinger.com"
-                  className="form-input flex-1"
-                  onChange={(e)=>changeValue(e)}
-                  value={params.SMTPHost}
-                  name="SMTPHost"
-                />
-              </div>
-            </div>
-            <div className="grid mt-4 grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label>SMTP Port</label>
-                <input
-                  type="text"
-                  placeholder="465"
-                  className="form-input flex-1"
-                  onChange={(e)=>changeValue(e)}
-                  value={params.SMTPPort}
-                  name="SMTPPort"
-                />
-              </div>
-              <div>
-                <label>Sender Mail</label>
-                <input
-                  type="email"
-                  placeholder="Enter Email (admin@account.com)"
-                  className="form-input flex-1"
-                  onChange={(e)=>changeValue(e)}
-                  value={params.SenderMail}
-                  name="SenderMail"
-                />
-              </div>
-            </div>
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                                <div>
+                                                    <label>Protocol</label>
+                                                    <input
+                                                        type="text"
+                                                        placeholder="smtp"
+                                                        className="form-input flex-1"
+                                                        onChange={(e) => changeValue(e)}
+                                                        value={params.Protocol}
+                                                        name="Protocol"
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label>SMTP Host</label>
+                                                    <input
+                                                        type="text"
+                                                        placeholder="ssl:smtp@hostinger.com"
+                                                        className="form-input flex-1"
+                                                        onChange={(e) => changeValue(e)}
+                                                        value={params.SMTPHost}
+                                                        name="SMTPHost"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="grid mt-4 grid-cols-1 sm:grid-cols-2 gap-4">
+                                                <div>
+                                                    <label>SMTP Port</label>
+                                                    <input
+                                                        type="text"
+                                                        placeholder="465"
+                                                        className="form-input flex-1"
+                                                        onChange={(e) => changeValue(e)}
+                                                        value={params.SMTPPort}
+                                                        name="SMTPPort"
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label>Sender Mail</label>
+                                                    <input
+                                                        type="email"
+                                                        placeholder="Enter Email (admin@account.com)"
+                                                        className="form-input flex-1"
+                                                        onChange={(e) => changeValue(e)}
+                                                        value={params.SenderMail}
+                                                        name="SenderMail"
+                                                    />
+                                                </div>
+                                            </div>
 
-            <div className="grid mt-4 grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="routename">Password</label>
-                <input
-                  type="password"
-                  placeholder="Enter Password"
-                  className="form-input"
-                  name="password"
-                  onChange={(e)=>changeValue(e)}
-                  value={params.password}
-                  
-                  id="password"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="routename">Mail Type</label>
-                <select
-                  name="mailtype"
-                  onChange={(e)=>changeValue(e)}
-                  value={params.mailtype}
-                  className="form-select text-white-dark"
-                  required
-                >
-                  <option value="">Select Type</option>
-                  <option value="option1">HTML1</option>
-                  <option value="option2">HTML2</option>
-                  <option value="option3">HTML3</option>
-                </select>
-              </div>
-            </div>
+                                            <div className="grid mt-4 grid-cols-1 sm:grid-cols-2 gap-4">
+                                                <div>
+                                                    <label htmlFor="routename">Password</label>
+                                                    <input
+                                                        type="password"
+                                                        placeholder="Enter Password"
+                                                        className="form-input"
+                                                        name="password"
+                                                        onChange={(e) => changeValue(e)}
+                                                        value={params.password}
+
+                                                        id="password"
+                                                        required
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label htmlFor="routename">Mail Type</label>
+                                                    <select
+                                                        name="mailtype"
+                                                        onChange={(e) => changeValue(e)}
+                                                        value={params.mailtype}
+                                                        className="form-select text-white-dark"
+                                                        required
+                                                    >
+                                                        <option value="">Select Type</option>
+                                                        <option value="option1">HTML1</option>
+                                                        <option value="option2">HTML2</option>
+                                                        <option value="option3">HTML3</option>
+                                                    </select>
+                                                </div>
+                                            </div>
 
                                             {!viewContactModal && (
                                                 <div className="flex justify-end items-center mt-8">
